@@ -1,15 +1,19 @@
 <?php
 /**
-
+* This script is designed to optimise the core tables used in Wordpress
+* This script is designed to be used as a cron job, 
+* to use this script enter your email address between the quotation marks beside the email 
+* If your Wordpress install is in a sub directory enter the directory on lines 15 and 16 before the /wp-config.php and /wp-blog-header.php
+* for example, if your Wordpress install is in a folder called 'blog' change lines to become /blog/wp-config.php etc
 */
 
 
 //******************************** EMAIL DETAILS*******************************************
-$email ='peter.t.smith@outlook.com';
+$email ='email.here@domain.com';
 //******************************************************************************************
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-require_once $root.'/wp/wp-config.php';
-require $root.'/wp/wp-blog-header.php';
+require_once $root.'/wp-config.php';
+require $root.'/wp-blog-header.php';
 
 function getTablepre(){
     global $wpdb;
